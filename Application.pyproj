@@ -1,0 +1,54 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>7544d616-6ed5-4514-a2e2-8e03316f48f8</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Program.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Application</Name>
+    <RootNamespace>Application</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application\Application.py" />
+    <Compile Include="Application\ListingProvider.py" />
+    <Compile Include="Application\NewListingFinder.py" />
+    <Compile Include="Application\Domain\Listing.py" />
+    <Compile Include="Program.py" />
+    <Compile Include="Application\Infrastructure\DaftScraper.py" />
+    <Compile Include="Application\Infrastructure\JsonReader.py" />
+    <Compile Include="Application\Infrastructure\JsonWriter.py" />
+    <Compile Include="Application\Infrastructure\SearchesReader.py" />
+    <Compile Include="Application\Interfaces\IDaftScraper.py" />
+    <Compile Include="Application\Interfaces\IJsonReader.py" />
+    <Compile Include="Application\Interfaces\IJsonWriter.py" />
+    <Compile Include="Application\Interfaces\ISearchesReader.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Infrastructure\" />
+    <Folder Include="Application\Interfaces\" />
+    <Folder Include="Application\Domain\" />
+    <Folder Include="Application\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
